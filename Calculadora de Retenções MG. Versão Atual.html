@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Retenções de Tributos MG</title>
+  <style>
+    body { font-family: Arial; padding: 20px; max-width: 800px; margin: auto; }
+    label { font-weight: bold; }
+    input, select { margin-bottom: 10px; padding: 5px; width: 100%; }
+    button { padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    .resultado { margin-top: 20px; font-weight: bold; background: #f4f4f4; padding: 10px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body style="background-color:#ffffff; color:#000000;">
+    <div style="text-align:center;"><img src="data:image/png;base64,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" alt="Logo MG" style="width:180px;margin-bottom:20px;"></div>
+  <h2 style="color:#F9D342;">Calculadora de Retenções de Tributos MG</h2>
+
+  <label>Descrição do Serviço (LC 116/03):</label>
+  <select id="descricao" onchange="atualizarAnexo()">
+    <option value="1.01 - Análise e desenvolvimento de sistemas">1.01 - Análise e desenvolvimento de sistemas</option>
+<option value="1.02 - Programação">1.02 - Programação</option>
+<option value="1.03 - Processamento de dados">1.03 - Processamento de dados</option>
+<option value="1.04 - Elaboração de programas de computadores">1.04 - Elaboração de programas de computadores</option>
+<option value="1.05 - Licenciamento ou cessão de direito de uso de programas">1.05 - Licenciamento ou cessão de direito de uso de programas</option>
+<option value="1.06 - Assessoria e consultoria em informática">1.06 - Assessoria e consultoria em informática</option>
+<option value="1.07 - Suporte técnico em informática">1.07 - Suporte técnico em informática</option>
+<option value="1.08 - Planejamento, confecção, manutenção e atualização de páginas eletrônicas">1.08 - Planejamento, confecção, manutenção e atualização de páginas eletrônicas</option>
+<option value="2.01 - Serviços de pesquisas e desenvolvimento">2.01 - Serviços de pesquisas e desenvolvimento</option>
+<option value="3.01 - Serviços de engenharia, arquitetura, geologia, urbanismo">3.01 - Serviços de engenharia, arquitetura, geologia, urbanismo</option>
+<option value="3.02 - Execução de obras da construção civil, hidráulica e outras">3.02 - Execução de obras da construção civil, hidráulica e outras</option>
+<option value="3.03 - Elaboração de planos diretores, paisagismo, etc.">3.03 - Elaboração de planos diretores, paisagismo, etc.</option>
+<option value="4.01 - Limpeza, conservação e zeladoria">4.01 - Limpeza, conservação e zeladoria</option>
+<option value="4.02 - Vigilância, segurança ou monitoramento">4.02 - Vigilância, segurança ou monitoramento</option>
+<option value="4.03 - Escolta, transporte de valores, segurança pessoal">4.03 - Escolta, transporte de valores, segurança pessoal</option>
+<option value="4.04 - Armazenamento, guarda e estacionamento de veículos">4.04 - Armazenamento, guarda e estacionamento de veículos</option>
+<option value="4.05 - Vigilância eletrônica">4.05 - Vigilância eletrônica</option>
+<option value="5.01 - Cópias, reprodução de documentos">5.01 - Cópias, reprodução de documentos</option>
+<option value="5.02 - Composição gráfica, fotocomposição, etc.">5.02 - Composição gráfica, fotocomposição, etc.</option>
+<option value="5.03 - Encadernação, gravação de dados, etc.">5.03 - Encadernação, gravação de dados, etc.</option>
+<option value="6.01 - Telefonia, rádio, televisão, etc.">6.01 - Telefonia, rádio, televisão, etc.</option>
+<option value="7.01 - Serviços de transporte municipal">7.01 - Serviços de transporte municipal</option>
+<option value="7.02 - Obras hidráulicas">7.02 - Obras hidráulicas</option>
+<option value="7.03 - Perfuração de poços artesianos">7.03 - Perfuração de poços artesianos</option>
+<option value="7.04 - Pavimentação">7.04 - Pavimentação</option>
+<option value="7.05 - Demolição">7.05 - Demolição</option>
+<option value="7.06 - Reparação e reforma de prédios, pontes, etc.">7.06 - Reparação e reforma de prédios, pontes, etc.</option>
+<option value="8.01 - Hospedagem">8.01 - Hospedagem</option>
+<option value="9.01 - Agenciamento de publicidade">9.01 - Agenciamento de publicidade</option>
+<option value="10.01 - Serviços de intermediação e agenciamento de bens">10.01 - Serviços de intermediação e agenciamento de bens</option>
+<option value="11.01 - Representação comercial e corretagem">11.01 - Representação comercial e corretagem</option>
+<option value="12.01 - Perícias, laudos, exames técnicos">12.01 - Perícias, laudos, exames técnicos</option>
+<option value="13.01 - Avaliação de bens">13.01 - Avaliação de bens</option>
+<option value="14.01 - Instalação de máquinas e equipamentos">14.01 - Instalação de máquinas e equipamentos</option>
+<option value="14.02 - Manutenção de máquinas e equipamentos">14.02 - Manutenção de máquinas e equipamentos</option>
+<option value="15.01 - Medicina e biomedicina">15.01 - Medicina e biomedicina</option>
+<option value="15.02 - Psicologia, psicanálise">15.02 - Psicologia, psicanálise</option>
+<option value="15.03 - Fisioterapia, terapia ocupacional">15.03 - Fisioterapia, terapia ocupacional</option>
+<option value="15.04 - Terapias alternativas">15.04 - Terapias alternativas</option>
+<option value="15.05 - Laboratórios de análises clínicas">15.05 - Laboratórios de análises clínicas</option>
+<option value="16.01 - Medicina veterinária">16.01 - Medicina veterinária</option>
+<option value="17.01 - Serviços de apoio técnico, administrativo">17.01 - Serviços de apoio técnico, administrativo</option>
+<option value="17.11 - Instalação de redes de computadores">17.11 - Instalação de redes de computadores</option>
+<option value="17.12 - Instalação de redes de comunicação">17.12 - Instalação de redes de comunicação</option>
+<option value="18.01 - Guarda e custódia de bens">18.01 - Guarda e custódia de bens</option>
+<option value="20.01 - Assistência técnica">20.01 - Assistência técnica</option>
+<option value="21.01 - Planejamento e organização de feiras, eventos">21.01 - Planejamento e organização de feiras, eventos</option>
+<option value="22.01 - Serviços de ensino">22.01 - Serviços de ensino</option>
+<option value="23.01 - Treinamento e desenvolvimento profissional">23.01 - Treinamento e desenvolvimento profissional</option>
+<option value="25.01 - Pintura em geral">25.01 - Pintura em geral</option>
+<option value="26.01 - Revestimento de pisos e paredes">26.01 - Revestimento de pisos e paredes</option>
+<option value="27.01 - Serviços funerários">27.01 - Serviços funerários</option>
+<option value="28.01 - Alfaiataria, costura, lavanderia">28.01 - Alfaiataria, costura, lavanderia</option>
+<option value="29.01 - Academias de ginástica, dança">29.01 - Academias de ginástica, dança</option>
+<option value="30.01 - Salões de beleza, barbearia, etc.">30.01 - Salões de beleza, barbearia, etc.</option>
+<option value="31.01 - Nutricionistas, esteticistas">31.01 - Nutricionistas, esteticistas</option>
+<option value="32.01 - Serviços de diversão, lazer e entretenimento">32.01 - Serviços de diversão, lazer e entretenimento</option>
+<option value="33.01 - Produção cinematográfica, de vídeos, etc.">33.01 - Produção cinematográfica, de vídeos, etc.</option>
+<option value="34.01 - Cessão de mão de obra">34.01 - Cessão de mão de obra</option>
+<option value="35.01 - Planejamento, organização de eventos">35.01 - Planejamento, organização de eventos</option>
+<option value="36.01 - Outros serviços não especificados">36.01 - Outros serviços não especificados</option>
+  </select>
+
+  <label>Regime Tributário do Prestador:</label>
+    <select id="regime">
+        <option value="MEI">MEI</option>
+        <option value="Simples">Simples Nacional</option>
+        <option value="Presumido">Lucro Presumido</option>
+        <option value="Real">Lucro Real</option>
+    </select>
+    <label>Valor do Serviço (R$):</label>
+  <input type="number" id="valor" step="0.01" placeholder="ex: 1500.00">
+
+  <label>Alíquota de ISS (% – entre 2.00 e 5.00):</label>
+  <input type="number" id="aliquota_iss" step="0.01" min="2.00" max="5.00" placeholder="ex: 3.50">
+
+  <label>Forma de Recolhimento do INSS:</label>
+  <select id="inss_tipo">
+    <option value="Folha">Folha de Pagamento (11%)</option>
+    <option value="Faturamento">Faturamento (3.5%)</option>
+  </select>
+
+  <label>Tipo de Contrato:</label>
+  <select id="contrato_tipo">
+    <option value="total">Empreitada Total</option>
+    <option value="parcial">Empreitada Parcial / Cessão de Mão de Obra</option>
+    <option value="outro">Outro</option>
+  </select>
+
+  <label>Valor Empregado com Material (R$):</label>
+  <input type="number" id="valor_material" step="0.01" value="0.00">
+
+  <button onclick="calcular()">Calcular Retenções</button>
+
+  <div class="resultado" id="resultado"></div>
+<br><button onclick="exportarCSV()">Exportar Resultado (.csv)</button>
+       <button onclick="window.print()">Gerar PDF (Imprimir)</button>
+
+  <script>
+    let anexo = "";
+
+    function atualizarAnexo() {
+      const servico = document.getElementById('descricao').value;
+      const codigo = servico.split(" - ")[0];
+      const codigosIV = ['3.02', '7.02', '7.03', '7.04', '7.05', '7.06', '14.01', '14.02', '17.11', '17.12', '25.01', '26.01', '34.01'];
+      anexo = codigosIV.includes(codigo) ? "Anexo IV" : "Outro";
+    }
+
+    function calcular() {
+      const regime = document.getElementById('regime').value;
+      const valor = parseFloat(document.getElementById('valor').value);
+      const aliISS = parseFloat(document.getElementById('aliquota_iss').value) / 100;
+      const inssTipo = document.getElementById('inss_tipo').value;
+      const contrato = document.getElementById('contrato_tipo').value;
+      const servico = document.getElementById('descricao').value;
+      const cod = servico.split(" - ")[0];
+      const material = parseFloat(document.getElementById('valor_material').value);
+
+      let iss = 0, inss = 0, irrf = 0, pis = 0, cofins = 0, csll = 0;
+
+      // ISS – somente se dentro dos incisos I a XXV e regime normal (substituição)
+      const servicosISSRetido = ['3.02', '7.02', '7.03', '7.04', '7.05', '7.06', '14.01', '14.02', '17.11', '17.12', '25.01', '26.01', '34.01'];
+      if (servicosISSRetido.includes(cod)) {
+        iss = valor * aliISS;
+      }
+
+      // Base INSS
+      let baseINSS = valor - material;
+      if (baseINSS < 0) baseINSS = 0;
+
+      const aplicaINSS = (
+        (contrato !== "total") || (anexo === "Anexo IV")
+      );
+
+      if (regime !== "MEI" && aplicaINSS) {
+        inss = baseINSS * (inssTipo === "Folha" ? 0.11 : 0.035);
+      }
+
+      if (regime === "Presumido" || regime === "Real") {
+        irrf = valor * 0.015;
+        pis = valor * 0.0065;
+        cofins = valor * 0.03;
+        csll = valor * 0.01;
+      }
+
+      const total = iss + inss + irrf + pis + cofins + csll;
+      const liquido = valor - total;
+
+      document.getElementById('resultado').innerHTML = `
+        <p><strong>Regime / Anexo:</strong> ` + (regime === "Simples" ? anexo : "Empresa não optante") + `</p>
+        <p>ISS: R$ ` + iss.toFixed(2) + `</p>
+        <p>INSS: R$ ` + inss.toFixed(2) + `</p>
+        <p>IRRF: R$ ` + irrf.toFixed(2) + `</p>
+        <p>PIS: R$ ` + pis.toFixed(2) + `</p>
+        <p>COFINS: R$ ` + cofins.toFixed(2) + `</p>
+        <p>CSLL: R$ ` + csll.toFixed(2) + `</p>
+        <p><strong>Total de Retenções: R$ ` + total.toFixed(2) + `</strong></p>
+        <p><strong>Valor Líquido a Pagar: R$ ` + liquido.toFixed(2) + `</strong></p>`;
+    }
+  
+    function exportarCSV() {
+      const regime = document.getElementById("regime").value;
+      const descricao = document.getElementById("descricao").value;
+      const valor = document.getElementById("valor").value;
+      const aliquota = document.getElementById("aliquota_iss").value;
+      const inssTipo = document.getElementById("inss_tipo").value;
+      const contrato = document.getElementById("contrato_tipo").value;
+      const material = document.getElementById("valor_material").value;
+      const anexoFinal = (regime === "Simples") ? anexo : "Empresa não optante";
+
+      const resultado = document.getElementById("resultado").innerText;
+
+      const csv = [
+        ["Descrição do Serviço", "Regime", "Anexo", "Valor do Serviço (R$)", "Alíquota ISS (%)", "Forma INSS", "Tipo de Contrato", "Valor Material (R$)", "Resultado Detalhado"],
+        [descricao, regime, anexoFinal, valor, aliquota, inssTipo, contrato, material, resultado.replace(/\n/g, " | ")]
+      ];
+
+      let csvContent = "data:text/csv;charset=utf-8," 
+        + csv.map(e => e.map(val => `"${val}"`).join(",")).join("\n");
+
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "resultado_retencao.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+</script>
+</body>
+</html>
